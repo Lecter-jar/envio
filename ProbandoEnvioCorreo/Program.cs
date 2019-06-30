@@ -11,19 +11,20 @@ namespace ProbandoEnvioCorreo
         static string asuntoMensaje;
         static string contenidoMensaje;
         static string copia;
+
         static void Main(string[] args)
         {
 
 
             // ingreso de parametros
             Console.Write("Ingrese correo receptor: ");
-            correoReceptor = Console.ReadLine();
+            correoReceptor = Console.ReadLine(); // receptor
             Console.Write("Ingrese el asunto del mensaje: ");
-            asuntoMensaje = Console.ReadLine();
+            asuntoMensaje = Console.ReadLine(); // asunto del mensaje
             Console.Write("Ingrese el contenido del mensaje: ");
-            asuntoMensaje = Console.ReadLine();
+            contenidoMensaje = Console.ReadLine(); // contenido
             Console.Write("Ingrese la copia del mensaje: ");
-            copia = Console.ReadLine();
+            copia = Console.ReadLine(); // copia
             envioCorreo(correoReceptor, asuntoMensaje, contenidoMensaje, copia);
 
 
@@ -46,7 +47,7 @@ namespace ProbandoEnvioCorreo
             mensaje.IsBodyHtml = true;
             mensaje.From = new System.Net.Mail.MailAddress("leandro.valenzuela02@inacapmail.cl"); // mi correo 
 
-            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient(); // nuevo cliente smtp
 
             cliente.Credentials = new System.Net.NetworkCredential("leandro.valenzuela02@inacapmail.cl", ""); // correo y contraseña
 
